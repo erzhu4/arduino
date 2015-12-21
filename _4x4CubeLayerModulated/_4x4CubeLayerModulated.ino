@@ -1,4 +1,6 @@
 int iterations = 5;
+int bigNum = 300;
+int smallNum = 2;
 int col1 = 0;
 int col2 = 1;
 int col3 = 2;
@@ -900,66 +902,621 @@ void movingBlocks(int duration) {
   }
 }
 
-void innerOuter(int duration) {
+//void innerOuter(int duration) {
+//  for (int x = 0; x < iterations; x++){
+//    for (int i = 0; i < duration; i++) {
+//      displayGround(g1);
+//      digitalWrite(col6, HIGH);
+//      digitalWrite(col7, HIGH);
+//      digitalWrite(col10, HIGH);
+//      digitalWrite(col11, HIGH);
+//      displayGround(g2);
+//      digitalWrite(col6, HIGH);
+//      digitalWrite(col7, HIGH);
+//      digitalWrite(col10, HIGH);
+//      digitalWrite(col11, HIGH);
+//      displayGround(g3);
+//      displayGround(g4);
+//    }
+//    for (int i = 0; i < duration; i++) {
+//      allOn();
+//      displayGround(g1);
+//      digitalWrite(col1, HIGH);
+//      digitalWrite(col2, HIGH);
+//      digitalWrite(col3, HIGH);
+//      digitalWrite(col4, HIGH);
+//      digitalWrite(col5, HIGH);
+//      digitalWrite(col8, HIGH);
+//      digitalWrite(col9, HIGH);
+//      digitalWrite(col12, HIGH);
+//      digitalWrite(col13, HIGH);
+//      digitalWrite(col14, HIGH);
+//      digitalWrite(col15, HIGH);
+//      digitalWrite(col16, HIGH);
+//      displayGround(g2);
+//      digitalWrite(col1, HIGH);
+//      digitalWrite(col2, HIGH);
+//      digitalWrite(col3, HIGH);
+//      digitalWrite(col4, HIGH);
+//      digitalWrite(col5, HIGH);
+//      digitalWrite(col8, HIGH);
+//      digitalWrite(col9, HIGH);
+//      digitalWrite(col12, HIGH);
+//      digitalWrite(col13, HIGH);
+//      digitalWrite(col14, HIGH);
+//      digitalWrite(col15, HIGH);
+//      digitalWrite(col16, HIGH);
+//      displayGround(g3);
+//      allOn();
+//      displayGround(g4);
+//    }
+//  }
+//}
+
+void sweepSideWays(int duration){
   for (int x = 0; x < iterations; x++){
-    for (int i = 0; i < duration; i++) {
+    for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col4, HIGH);
+      digitalWrite(col8, HIGH);
+      digitalWrite(col12, HIGH);
+      digitalWrite(col16, HIGH);
       displayGround(g1);
-      digitalWrite(col6, HIGH);
-      digitalWrite(col7, HIGH);
-      digitalWrite(col10, HIGH);
-      digitalWrite(col11, HIGH);
+      digitalWrite(col4, HIGH);
+      digitalWrite(col8, HIGH);
+      digitalWrite(col12, HIGH);
+      digitalWrite(col16, HIGH);
       displayGround(g2);
-      digitalWrite(col6, HIGH);
-      digitalWrite(col7, HIGH);
-      digitalWrite(col10, HIGH);
-      digitalWrite(col11, HIGH);
+      digitalWrite(col4, HIGH);
+      digitalWrite(col8, HIGH);
+      digitalWrite(col12, HIGH);
+      digitalWrite(col16, HIGH);
       displayGround(g3);
+      digitalWrite(col4, HIGH);
+      digitalWrite(col8, HIGH);
+      digitalWrite(col12, HIGH);
+      digitalWrite(col16, HIGH);
       displayGround(g4);
     }
-    for (int i = 0; i < duration; i++) {
-      allOn();
+    for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col3, HIGH);
+      digitalWrite(col7, HIGH);
+      digitalWrite(col11, HIGH);
+      digitalWrite(col15, HIGH);
+      displayGround(g1);
+      digitalWrite(col3, HIGH);
+      digitalWrite(col7, HIGH);
+      digitalWrite(col11, HIGH);
+      digitalWrite(col15, HIGH);
+      displayGround(g2);
+      digitalWrite(col3, HIGH);
+      digitalWrite(col7, HIGH);
+      digitalWrite(col11, HIGH);
+      digitalWrite(col15, HIGH);
+      displayGround(g3);
+      digitalWrite(col3, HIGH);
+      digitalWrite(col7, HIGH);
+      digitalWrite(col11, HIGH);
+      digitalWrite(col15, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col2, HIGH);
+      digitalWrite(col6, HIGH);
+      digitalWrite(col10, HIGH);
+      digitalWrite(col14, HIGH);
+      displayGround(g1);
+      digitalWrite(col2, HIGH);
+      digitalWrite(col6, HIGH);
+      digitalWrite(col10, HIGH);
+      digitalWrite(col14, HIGH);
+      displayGround(g2);
+      digitalWrite(col2, HIGH);
+      digitalWrite(col6, HIGH);
+      digitalWrite(col10, HIGH);
+      digitalWrite(col14, HIGH);
+      displayGround(g3);
+      digitalWrite(col2, HIGH);
+      digitalWrite(col6, HIGH);
+      digitalWrite(col10, HIGH);
+      digitalWrite(col14, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col1, HIGH);
+      digitalWrite(col5, HIGH);
+      digitalWrite(col9, HIGH);
+      digitalWrite(col13, HIGH);
       displayGround(g1);
       digitalWrite(col1, HIGH);
-      digitalWrite(col2, HIGH);
-      digitalWrite(col3, HIGH);
-      digitalWrite(col4, HIGH);
       digitalWrite(col5, HIGH);
-      digitalWrite(col8, HIGH);
       digitalWrite(col9, HIGH);
-      digitalWrite(col12, HIGH);
       digitalWrite(col13, HIGH);
-      digitalWrite(col14, HIGH);
-      digitalWrite(col15, HIGH);
-      digitalWrite(col16, HIGH);
       displayGround(g2);
       digitalWrite(col1, HIGH);
-      digitalWrite(col2, HIGH);
-      digitalWrite(col3, HIGH);
-      digitalWrite(col4, HIGH);
       digitalWrite(col5, HIGH);
-      digitalWrite(col8, HIGH);
       digitalWrite(col9, HIGH);
-      digitalWrite(col12, HIGH);
       digitalWrite(col13, HIGH);
-      digitalWrite(col14, HIGH);
-      digitalWrite(col15, HIGH);
-      digitalWrite(col16, HIGH);
       displayGround(g3);
-      allOn();
+      digitalWrite(col1, HIGH);
+      digitalWrite(col5, HIGH);
+      digitalWrite(col9, HIGH);
+      digitalWrite(col13, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/4; i++) {
+      allOff();
+      displayGround(g1);
+      allOff();
+      displayGround(g2);
+      allOff();
+      displayGround(g3);
+      allOff();
       displayGround(g4);
     }
   }
 }
 
+void rain(int duration) {
+  for (int x = 0; x < iterations; x++){
+    for (int i = 0; i < duration/4; i++) {
+      //start rain on 1
+      digitalWrite(col9, HIGH);
+      displayGround(g1);
+      digitalWrite(col11, HIGH);
+      displayGround(g2);
+      digitalWrite(col13, HIGH);
+      displayGround(g3);
+      digitalWrite(col1, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col11, HIGH);
+      displayGround(g1);
+      digitalWrite(col13, HIGH);
+      displayGround(g2);
+      digitalWrite(col1, HIGH);
+      displayGround(g3);
+      digitalWrite(col6, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/4; i++) {
+      //start rain on 11
+      digitalWrite(col13, HIGH);
+      displayGround(g1);
+      digitalWrite(col1, HIGH);
+      displayGround(g2);
+      digitalWrite(col6, HIGH);
+      displayGround(g3);
+      digitalWrite(col7, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col1, HIGH);
+      displayGround(g1);
+      digitalWrite(col6, HIGH);
+      displayGround(g2);
+      digitalWrite(col7, HIGH);
+      displayGround(g3);
+      digitalWrite(col2, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      //start rain on 5
+      digitalWrite(col6, HIGH);
+      displayGround(g1);
+      digitalWrite(col7, HIGH);
+      displayGround(g2);
+      digitalWrite(col2, HIGH);
+      displayGround(g3);
+      digitalWrite(col5, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      //start rain on 15;
+      digitalWrite(col7, HIGH);
+      displayGround(g1);
+      digitalWrite(col2, HIGH);
+      displayGround(g2);
+      digitalWrite(col5, HIGH);
+      displayGround(g3);
+      digitalWrite(col15, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      //start rain on 8;
+      digitalWrite(col2, HIGH);
+      displayGround(g1);
+      digitalWrite(col5, HIGH);
+      displayGround(g2);
+      digitalWrite(col15, HIGH);
+      displayGround(g3);
+      digitalWrite(col8, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col5, HIGH);
+      displayGround(g1);
+      digitalWrite(col15, HIGH);
+      displayGround(g2);
+      digitalWrite(col8, HIGH);
+      displayGround(g3);
+      digitalWrite(col3, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col15, HIGH);
+      displayGround(g1);
+      digitalWrite(col8, HIGH);
+      displayGround(g2);
+      digitalWrite(col3, HIGH);
+      displayGround(g3);
+      digitalWrite(col10, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col8, HIGH);
+      displayGround(g1);
+      digitalWrite(col3, HIGH);
+      displayGround(g2);
+      digitalWrite(col10, HIGH);
+      displayGround(g3);
+      digitalWrite(col2, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col3, HIGH);
+      displayGround(g1);
+      digitalWrite(col10, HIGH);
+      displayGround(g2);
+      digitalWrite(col2, HIGH);
+      displayGround(g3);
+      digitalWrite(col16, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col10, HIGH);
+      displayGround(g1);
+      digitalWrite(col2, HIGH);
+      displayGround(g2);
+      digitalWrite(col16, HIGH);
+      displayGround(g3);
+      digitalWrite(col9, HIGH);
+      displayGround(g4);
+    }
+   for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col2, HIGH);
+      displayGround(g1);
+      digitalWrite(col16, HIGH);
+      displayGround(g2);
+      digitalWrite(col9, HIGH);
+      displayGround(g3);
+      digitalWrite(col11, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/4; i++) {
+      digitalWrite(col16, HIGH);
+      displayGround(g1);
+      digitalWrite(col9, HIGH);
+      displayGround(g2);
+      digitalWrite(col11, HIGH);
+      displayGround(g3);
+      digitalWrite(col13, HIGH);
+      displayGround(g4);
+    }
+  }
+}
+
+void crossPlane(int duration) {
+  for (int x = 0; x < iterations; x++){
+    for (int i = 0; i < duration/2; i++) {
+      //step 1
+      displayGround(g1);
+      displayGround(g2);
+      displayGround(g3);
+      digitalWrite(col16, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step 2
+      displayGround(g1);
+      displayGround(g2);
+      digitalWrite(col16, HIGH);
+      displayGround(g3);
+      digitalWrite(col15, HIGH);
+      digitalWrite(col12, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step 3
+      displayGround(g1);
+      digitalWrite(col16, HIGH);
+      displayGround(g2);
+      digitalWrite(col15, HIGH);
+      digitalWrite(col12, HIGH);
+      displayGround(g3);
+      digitalWrite(col14, HIGH);
+      digitalWrite(col8, HIGH);
+      digitalWrite(col11, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step 4
+      digitalWrite(col16, HIGH);
+      displayGround(g1);
+      digitalWrite(col15, HIGH);
+      digitalWrite(col12, HIGH);
+      displayGround(g2);
+      digitalWrite(col14, HIGH);
+      digitalWrite(col8, HIGH);
+      digitalWrite(col11, HIGH);
+      displayGround(g3);
+      digitalWrite(col13, HIGH);
+      digitalWrite(col4, HIGH);
+      digitalWrite(col10, HIGH);
+      digitalWrite(col7, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step 5
+      digitalWrite(col15, HIGH);
+      digitalWrite(col12, HIGH);
+      displayGround(g1);
+      digitalWrite(col14, HIGH);
+      digitalWrite(col8, HIGH);
+      digitalWrite(col11, HIGH);
+      displayGround(g2);
+      digitalWrite(col13, HIGH);
+      digitalWrite(col4, HIGH);
+      digitalWrite(col10, HIGH);
+      digitalWrite(col7, HIGH);
+      displayGround(g3);
+      digitalWrite(col9, HIGH);
+      digitalWrite(col6, HIGH);
+      digitalWrite(col3, HIGH);      
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step 6
+      digitalWrite(col14, HIGH);
+      digitalWrite(col8, HIGH);
+      digitalWrite(col11, HIGH);
+      displayGround(g1);
+      digitalWrite(col13, HIGH);
+      digitalWrite(col4, HIGH);
+      digitalWrite(col10, HIGH);
+      digitalWrite(col7, HIGH);
+      displayGround(g2);
+      digitalWrite(col9, HIGH);
+      digitalWrite(col6, HIGH);
+      digitalWrite(col3, HIGH);
+      displayGround(g3);
+      digitalWrite(col5, HIGH);
+      digitalWrite(col2, HIGH);   
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step 7
+      digitalWrite(col13, HIGH);
+      digitalWrite(col4, HIGH);
+      digitalWrite(col10, HIGH);
+      digitalWrite(col7, HIGH);
+      displayGround(g1);
+      digitalWrite(col9, HIGH);
+      digitalWrite(col6, HIGH);
+      digitalWrite(col3, HIGH);
+      displayGround(g2);
+      digitalWrite(col5, HIGH);
+      digitalWrite(col2, HIGH);
+      displayGround(g3);
+      digitalWrite(col1, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step 8
+      digitalWrite(col9, HIGH);
+      digitalWrite(col6, HIGH);
+      digitalWrite(col3, HIGH);
+      displayGround(g1);
+      digitalWrite(col5, HIGH);
+      digitalWrite(col2, HIGH);
+      displayGround(g2);
+      digitalWrite(col1, HIGH);
+      displayGround(g3);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step whatever
+      digitalWrite(col5, HIGH);
+      digitalWrite(col2, HIGH);
+      displayGround(g1);
+      digitalWrite(col1, HIGH);
+      displayGround(g2);
+      displayGround(g3);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step whatever
+      digitalWrite(col1, HIGH);
+      displayGround(g1);
+      displayGround(g2);
+      displayGround(g3);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      //step whatever
+      displayGround(g1);
+      displayGround(g2);
+      displayGround(g3);
+      displayGround(g4);
+    }
+  }
+}
+
+void rainSideWays(int duration){
+  for (int x = 0; x < iterations; x++){
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col5, HIGH);
+      displayGround(g1);
+      digitalWrite(col7, HIGH);
+      displayGround(g2);
+      digitalWrite(col10, HIGH);
+      displayGround(g3);
+      digitalWrite(col16, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col6, HIGH);
+      displayGround(g1);
+      digitalWrite(col8, HIGH);
+      displayGround(g2);
+      digitalWrite(col11, HIGH);
+      displayGround(g3);
+      digitalWrite(col5, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col7, HIGH);
+      displayGround(g1);
+      digitalWrite(col13, HIGH);
+      displayGround(g2);
+      digitalWrite(col12, HIGH);
+      displayGround(g3);
+      digitalWrite(col6, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col8, HIGH);
+      displayGround(g1);
+      digitalWrite(col14, HIGH);
+      displayGround(g2);
+      digitalWrite(col1, HIGH);
+      displayGround(g3);
+      digitalWrite(col7, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col9, HIGH);
+      displayGround(g1);
+      digitalWrite(col15, HIGH);
+      displayGround(g2);
+      digitalWrite(col2, HIGH);
+      displayGround(g3);
+      digitalWrite(col8, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col10, HIGH);
+      displayGround(g1);
+      digitalWrite(col16, HIGH);
+      displayGround(g2);
+      digitalWrite(col3, HIGH);
+      displayGround(g3);
+      digitalWrite(col13, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col11, HIGH);
+      displayGround(g1);
+      digitalWrite(col1, HIGH);
+      displayGround(g2);
+      digitalWrite(col4, HIGH);
+      displayGround(g3);
+      digitalWrite(col14, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col12, HIGH);
+      displayGround(g1);
+      digitalWrite(col2, HIGH);
+      displayGround(g2);
+      digitalWrite(col9, HIGH);
+      displayGround(g3);
+      digitalWrite(col15, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col13, HIGH);
+      displayGround(g1);
+      digitalWrite(col3, HIGH);
+      displayGround(g2);
+      digitalWrite(col10, HIGH);
+      displayGround(g3);
+      digitalWrite(col16, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col14, HIGH);
+      displayGround(g1);
+      digitalWrite(col4, HIGH);
+      displayGround(g2);
+      digitalWrite(col11, HIGH);
+      displayGround(g3);
+      digitalWrite(col13, HIGH);// first account
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col15, HIGH);
+      displayGround(g1);
+      digitalWrite(col5, HIGH);
+      displayGround(g2);
+      digitalWrite(col12, HIGH);
+      displayGround(g3);
+      digitalWrite(col14, HIGH);
+      displayGround(g4);
+    }
+    for (int i = 0; i < duration/2; i++) {
+      digitalWrite(col16, HIGH);
+      displayGround(g1);
+      digitalWrite(col6, HIGH);
+      displayGround(g2);
+      digitalWrite(col9, HIGH);
+      displayGround(g3);
+      digitalWrite(col15, HIGH);
+      displayGround(g4);
+    }
+  }
+}
+
+//      digitalWrite(col5, HIGH);
+//      displayGround(g1);
+//      digitalWrite(col7, HIGH);
+//      displayGround(g2);
+//      digitalWrite(col10, HIGH);
+//      displayGround(g3);
+//      digitalWrite(col16, HIGH);
+//      displayGround(g4);
+
 void loop() {
   iterations = 5;
-  wavePattern(600);
-  waveSideWays(600);
-  movingBlocks(1000);
-  innerOuter(500);
-  iterations = 10;
+  rainSideWays(500);
+  crossPlane(300);
+  rain(500);
   wavePattern(300);
   waveSideWays(300);
   movingBlocks(500);
-  innerOuter(1000);
+  sweepSideWays(300);
+  iterations = 1;
+  bigNum = 450;
+  smallNum = 10;
+  for (int i = bigNum; i > 0; i -= smallNum * 2){
+    rainSideWays(i);
+  }
+  for (int i = bigNum; i > 0; i -= smallNum * 2){
+    rain(i);
+  }
+  for (int i = bigNum; i > 0; i -= smallNum){
+    crossPlane(i);
+  }
+  for (int i = bigNum; i > 0; i -= smallNum){
+    sweepSideWays(i);
+  }
+  for (int i = bigNum; i > 0; i -= smallNum){
+    wavePattern(i);
+  }
+  for (int i = bigNum; i > 0; i -= smallNum){
+    waveSideWays(i);
+  }
+  for (int i = bigNum; i > 0; i -= smallNum){
+    movingBlocks(i);
+  }
 }
